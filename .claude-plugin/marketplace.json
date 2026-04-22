@@ -1,0 +1,18 @@
+{
+  "name": "claude-fitness-break",
+  "owner": {
+    "name": "Adam Ismael",
+    "url": "https://github.com/adam-ismael"
+  },
+  "metadata": {
+    "description": "An unhinged rotating cast of fitness personalities in your Claude Code status bar."
+  },
+  "plugins": [
+    {
+      "name": "claude-fitness-break",
+      "description": "Stay fit while Claude works. Random calisthenics in your status line, delivered by an unhinged rotating cast of fitness personalities powered by Haiku.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

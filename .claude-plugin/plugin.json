@@ -1,0 +1,42 @@
+{
+  "name": "claude-fitness-break",
+  "version": "1.0.3",
+  "description": "A rotating cast of unhinged fitness personalities in your Claude Code status bar. Get exercise nudges every 5 minutes while Claude works.",
+  "author": {
+    "name": "Adam Ismael",
+    "url": "https://github.com/adam-ismael"
+  },
+  "repository": "https://github.com/adam-ismael/claude-fitness-break",
+  "homepage": "https://github.com/adam-ismael/claude-fitness-break#readme",
+  "license": "MIT",
+  "keywords": ["fitness", "statusline", "productivity", "wellness"],
+  "skills": "./skills",
+  "hooks": {
+    "SubagentStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/fitness-break.sh\"",
+            "timeout": 3,
+            "statusMessage": "Choosing your exercise..."
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Task|Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/fitness-break.sh\"",
+            "timeout": 3,
+            "statusMessage": "Choosing your exercise..."
+          }
+        ]
+      }
+    ]
+  }
+}
